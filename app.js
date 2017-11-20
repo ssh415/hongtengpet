@@ -69,6 +69,18 @@ app.use('/pets', function (req, res) {
 app.use('/orders', function (req, res) {
   res.sendFile(__dirname + '/views/order.html');
 });
+app.use('/petadd', function (req, res) {
+  res.sendFile(__dirname + '/views/petadd.html');
+});
+app.use('/petlist', function (req, res) {
+  res.sendFile(__dirname + '/views/petlist.html');
+});
+app.use('/petstock', function (req, res) {
+  res.sendFile(__dirname + '/views/petstock.html');
+});
+app.use('/species', function (req, res) {
+  res.sendFile(__dirname + '/views/species.html');
+});
 
 app.use('/static', express.static('public/static'));
 app.use('/apis', express.static('public/apis'));

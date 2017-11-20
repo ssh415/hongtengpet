@@ -1,17 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>首页</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>宏腾-宠物之家</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="/javascripts/layui-src/dist/css/layui.css" media="all">
+    <link rel="stylesheet" href="/javascripts/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
 </head>
-<body>
-<h1>Express Demo</h1>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><span style="font-size: 28px; font-weight: bold; font-family: 隶书;">宏腾-宠物之家</span></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="/images/girl.png" class="layui-nav-img">
+                    叶落惊秋
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">个人信息</a></dd>
+                    <dd><a href="">密码设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退出</a></li>
+        </ul>
+    </div>
 
-<footer>
-    <p>
-        <a href="/">首页</a> - <a href="/pets">宠物之家</a> - <a href="/orders">查看订单</a>
-    </p>
-</footer>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed layui-this">
+                    <a href="/home"><i class="layui-icon" style="font-size: 20px; color: #ccc;">
+                        &#xe68e;</i>&emsp;首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript: void(0);"><i class="layui-icon" style="font-size: 20px; color: #ccc;">
+                        &#xe62e;</i>&emsp;宠物管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/petadd">&emsp;&emsp;&nbsp;宠物新增</a></dd>
+                        <dd><a href="/petlist">&emsp;&emsp;&nbsp;信息编辑</a></dd>
+                        <dd><a href="/petstock">&emsp;&emsp;&nbsp;货存管理</a></dd>
+                        <dd><a href="/species">&emsp;&emsp;&nbsp;品种管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript: void(0);"><i class="layui-icon" style="font-size: 20px; color: #ccc;">&#xe63c;</i>&emsp;订单管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/">&emsp;&emsp;&nbsp;创建订单</a></dd>
+                        <dd><a href="/">&emsp;&emsp;&nbsp;订单列表</a></dd>
+                        <dd><a href="/">&emsp;&emsp;&nbsp;物流信息</a></dd>
+                        <dd><a href="/">&emsp;&emsp;&nbsp;采购管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript: void(0);"><i class="layui-icon" style="font-size: 20px; color: #ccc;">&#xe612;</i>&emsp;账号管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/">&emsp;&emsp;&nbsp;账号列表</a></dd>
+                        <dd><a href="/">&emsp;&emsp;&nbsp;角色设置</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
 
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="margin: 10px;">
+            <span class="layui-breadcrumb" lay-separator="-">
+                <a style="font-size: 15px;"><cite>首页</cite></a>
+            </span>
+            <hr class="layui-bg-green">
+        </div>
+        <div class="layui-carousel" style="margin: 10px;" id="lunbo">
+            <div carousel-item>
+                <div style="background: #ccc url(/images/pet1.jpg) no-repeat fixed top;"></div>
+                <div style="background: #ccc url(/images/pet2.jpg) no-repeat fixed top;"></div>
+                <div style="background: #ccc url(/images/pet3.jpg) no-repeat fixed top;"></div>
+                <div style="background: #ccc url(/images/pet4.jpg) no-repeat fixed top;"></div>
+                <div style="background: #ccc url(/images/pet5.jpg) no-repeat fixed top;"></div>
+            </div>
+        </div>
+        <div style="margin: 10px;">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>销量TOP5</legend>
+            </fieldset>
+            <table class="layui-table" lay-even lay-skin="nob">
+                <colgroup>
+                    <col width="250">
+                    <col width="150">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td><img src="/images/pet1.jpg" style="width: 100px; height: 40px;">&nbsp;<b>斗牛犬</b></td>
+                    <td><span style="font-family: Impact">1542</span></td>
+                    <td><i class="fa fa-arrow-up" style="color: green" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="/images/pet2.jpg" style="width: 100px; height: 40px;">&nbsp;<b>柯基</b></td>
+                    <td><span style="font-family: Impact">1212</span></td>
+                    <td><i class="fa fa-arrow-up" style="color: green" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="/images/pet3.jpg" style="width: 100px; height: 40px;">&nbsp;<b>岭南黄猫</b></td>
+                    <td><span style="font-family: Impact">1042</span></td>
+                    <td><i class="fa fa-arrow-down" style="color: red" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="/images/pet4.jpg" style="width: 100px; height: 40px;">&nbsp;<b>翠毛鹦鹉</b></td>
+                    <td><span style="font-family: Impact">952</span></td>
+                    <td><i class="fa fa-arrow-right" style="color: #ccc" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="/images/pet5.jpg" style="width: 100px; height: 40px;">&nbsp;<b>大耳兔</b></td>
+                    <td><span style="font-family: Impact">752</span></td>
+                    <td><i class="fa fa-arrow-up" style="color: green" aria-hidden="true"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin: 10px;">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>今日数据看板</legend>
+            </fieldset>
+            <div class="layui-row">
+                <div class="layui-col-md3" style="height: 100px;">
+                    <div style="margin: 0 20px 0 0; height: 100%; background: darkcyan;">
+                        <div style="float: left"><img src="/images/pet1.jpg" style="width: 80px; height: 80px; margin: 10px;"></div>
+                        <div style="float: left;"><span style="line-height: 55px; font-size: 25px; color: #fff;">数据1</span><br><span style="font-size: 20px; font-family: Impact; color: #fff;">1584</span></div>
+                    </div>
+                </div>
+                <div class="layui-col-md3" style="height: 100px;">
+                    <div style="margin: 0 20px 0 0; height: 100%; background: orange;">
+                        <div style="float: left"><img src="/images/pet2.jpg" style="width: 80px; height: 80px; margin: 10px;"></div>
+                        <div style="float: left;"><span style="line-height: 55px; font-size: 25px; color: #fff;">数据2</span><br><span style="font-size: 20px; font-family: Impact; color: #fff;">1584</span></div>
+                    </div>
+                </div>
+                <div class="layui-col-md3" style="height: 100px;">
+                    <div style="margin: 0 20px 0 0; height: 100%; background: hotpink;">
+                        <div style="float: left"><img src="/images/pet3.jpg" style="width: 80px; height: 80px; margin: 10px;"></div>
+                        <div style="float: left;"><span style="line-height: 55px; font-size: 25px; color: #fff;">数据3</span><br><span style="font-size: 20px; font-family: Impact; color: #fff;">1584</span></div>
+                    </div>
+                </div>
+                <div class="layui-col-md3" style="height: 100px;">
+                    <div style="height: 100%; background: gainsboro;">
+                        <div style="float: left"><img src="/images/pet4.jpg" style="width: 80px; height: 80px; margin: 10px;"></div>
+                        <div style="float: left;"><span style="line-height: 55px; font-size: 25px; color: #fff;">数据4</span><br><span style="font-size: 20px; font-family: Impact; color: #fff;">1584</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        <center>@2017-2018 宏腾科技有限公司 版本所有</center>
+    </div>
+</div>
+<script src="/javascripts/layui-src/dist/layui.js" charset="utf-8"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function () {
+        var element = layui.element;
+
+    });
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#lunbo',
+            width: '100%', //设置容器宽度
+            height: '280px',//设置容器高度
+            arrow: 'hover', //始终显示箭头 hover（悬停显示）always（始终显示）none（始终不显示）
+            interval: 3000, //轮播间隔
+            anim: 'fade' //切换动画方式 default（左右切换）updown（上下切换）fade（渐隐渐显切换）
+        });
+    });
+
+</script>
+<script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </body>
 </html>
