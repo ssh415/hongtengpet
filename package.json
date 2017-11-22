@@ -11,6 +11,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "formidable": "^1.1.1",
     "jade": "~1.11.0",
     "layui-src": "^2.2.2",
     "log4js": "^2.3.12",

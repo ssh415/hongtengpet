@@ -189,6 +189,30 @@ var Models = {
         imageUrl: {
             type: Sequelize.STRING,
             allowNull: true
+        },
+        //创建时间
+        createTime: {
+            field: 'create_at',
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        //创建人
+        creator: {
+            field: 'create_by',
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        //修改时间
+        updateTime: {
+            field: 'update_at',
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        //修改人
+        updater: {
+            field: 'update_by',
+            type: Sequelize.STRING,
+            allowNull: true
         }
     }, {
         tableName: 'pet_pets',

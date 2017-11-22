@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var pet = require('./routes/pet');
 var order = require('./routes/order');
+var upload = require('./routes/common/upload');
 
 var app = express();
 
@@ -59,9 +60,10 @@ app.use('/users', users);
 app.use('/index', index);
 app.use('/pet', pet);
 app.use('/order', order);
+app.use('/upload', upload);
 
 app.use('/home', function (req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(__dirname + '/views/common/index.html');
 });
 app.use('/pets', function (req, res) {
   res.sendFile(__dirname + '/views/pet.html');
@@ -70,16 +72,16 @@ app.use('/orders', function (req, res) {
   res.sendFile(__dirname + '/views/order.html');
 });
 app.use('/petadd', function (req, res) {
-  res.sendFile(__dirname + '/views/petadd.html');
+  res.sendFile(__dirname + '/views/pet/add.html');
 });
 app.use('/petlist', function (req, res) {
-  res.sendFile(__dirname + '/views/petlist.html');
+  res.sendFile(__dirname + '/views/pet/list.html');
 });
 app.use('/petstock', function (req, res) {
-  res.sendFile(__dirname + '/views/petstock.html');
+  res.sendFile(__dirname + '/views/pet/stock.html');
 });
 app.use('/species', function (req, res) {
-  res.sendFile(__dirname + '/views/species.html');
+  res.sendFile(__dirname + '/views/pet/species.html');
 });
 
 app.use('/static', express.static('public/static'));
