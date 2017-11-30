@@ -3,6 +3,7 @@ var router = express.Router();
 var Models = require('./../models/Models');
 var LogService = require('./../service/LogService');
 
+//宠物列表
 router.get('/list', function (req, res, next) {
     var limit = req.param('limit');
     var page = req.param('page');
@@ -21,6 +22,69 @@ router.get('/list', function (req, res, next) {
         json.count = result.count;
         res.send(json);
     });
+});
+
+//库存列表
+router.get('/stock', function (req, res, next) {
+    var limit = req.param('limit');
+    var page = req.param('page');
+    var json = {
+        success: true,
+        msg: '获取成功'
+    };
+
+    json.code = 0;
+    json.data = [
+        {
+            petNumber: 'B3422322',
+            species: 1,
+            price: 1526,
+            discount: 0,
+            purchaseFrom: '法国',
+            gender: 1,
+            stock: 20
+        },
+        {
+            petNumber: 'B3422323',
+            species: 1,
+            price: 4322,
+            discount: 0,
+            purchaseFrom: '挪威',
+            gender: 2,
+            stock: 50
+        },
+        {
+            petNumber: 'B3422324',
+            species: 1,
+            price: 5644,
+            discount: 0,
+            purchaseFrom: '中国',
+            gender: 1,
+            stock: 15
+        },
+        {
+            petNumber: 'B3422325',
+            species: 1,
+            price: 2311,
+            discount: 0,
+            purchaseFrom: '美国',
+            gender: 0,
+            stock: 6
+        }
+    ];
+    json.count = 4;
+    res.send(json);
+
+    // Models.Inventory.findAndCountAll({
+    //     offset: (page - 1) * limit,
+    //     limit: limit * 1
+    // }).then(function (result) {
+    //     // console.log(result.rows[0].petNumber);
+    //     json.code = 0;
+    //     json.data = result.rows;
+    //     json.count = result.count;
+    //     res.send(json);
+    // });
 });
 
 //宠物新增

@@ -20,7 +20,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 {field: 'speciesName', title: '品种', width: 250},
                 {field: 'parent', title: '父级'},
                 {field: 'desc', title: '描述'},
-                {fixed: 'right', width: 165, align:'center', toolbar: '#speciesTableBar'}
+                {fixed: 'right', title: '操作', width: 165, align:'center', toolbar: '#speciesTableBar'}
             ]
         ],
         data: [

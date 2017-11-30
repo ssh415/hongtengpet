@@ -23,7 +23,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 {field: 'age', title: '年龄'},
                 {field: 'skinColor', title: '毛色'},
                 {field: 'desc', title: '简介', width: 200},
-                {fixed: 'right', width: 165, align:'center', toolbar: '#petTableBar'}
+                {fixed: 'right', title: '操作', width: 165, align:'center', toolbar: '#petTableBar'}
             ]
         ],
         done: function (res, curr, count) {
