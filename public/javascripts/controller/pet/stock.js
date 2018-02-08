@@ -14,14 +14,14 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         loading: true,
         cols: [
             [ //表头
-                {field: 'petNumber', title: '宠物编号', width: 250, templet: '#stockPetNumberTpl'},
-                {field: 'species', title: '品种', sort: true, templet: '#stockSpeciesTpl'},
+                {field: 'petNumber', title: '宠物编号', style: 'height: 100px; line-height: 100px;', width: 250, templet: '#stockPetNumberTpl'},
+                {field: 'species', title: '品种', style: 'height: 100px; line-height: 100px;', sort: true, templet: '#stockSpeciesTpl'},
                 {field: 'price', title: '价格￥'},
-                {field: 'discount', title: '减免￥'},
-                {field: 'purchaseFrom', title: '进货地'},
-                {field: 'gender', title: '雌雄', sort: true, templet: '#stockGenderTpl'},
-                {field: 'stock', title: '库存', sort: true},
-                {fixed: 'right', title: '操作', width: 165, align:'center', toolbar: '#stockTableBar'}
+                {field: 'discount', title: '减免￥', style: 'height: 100px; line-height: 100px;'},
+                {field: 'purchaseFrom', title: '进货地', style: 'height: 100px; line-height: 100px;'},
+                {field: 'gender', title: '雌雄', style: 'height: 100px; line-height: 100px;', sort: true, templet: '#stockGenderTpl'},
+                {field: 'stock', title: '库存', style: 'height: 100px; line-height: 100px;', sort: true},
+                {fixed: 'right', title: '操作', style: 'height: 100px; line-height: 100px;', width: 165, align:'center', toolbar: '#stockTableBar'}
             ]
         ],
         done: function (res, curr, count) {
